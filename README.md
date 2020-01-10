@@ -19,11 +19,22 @@ Hereafter, for each classes give function to be tested. Remember that all functi
 ### Classe Machine
 #### functions
 
+- convertChar
+- advanceRotors
+
 ### Classe Reflector
 #### functions
 
+- reflectorFactory
+- convertForward
+
 ### Classe Rotor
 #### functions
+
+- rotorFactory
+- convertForward
+- createBCipher
+- advance
 
 ## Tricks & tips
 

@@ -8,15 +8,15 @@ public class Rotor {
     private int notch1 = -1;
     private int notch2 = -1;
 
-    public int getPosition() {		//Non tester par inspection car Get
+    public int getPosition() {		//Non tester par inspection car Getter
         return position;
     }
 
-    public void setPosition(int posn) {		//Non tester par inspection car Set
+    public void setPosition(int posn) {		//Non tester par inspection car Setter
         position = posn;
     }
     
-	public static Rotor rotorFactory(String str, String notches){
+	public static Rotor rotorFactory(String str, String notches){	// A besoin d'être testé
 		char[] s = str.trim().replace(" ", "").toCharArray();		//retire tout les espaces de la chaine de caractère et la mets dans un tableau
 		int[] cipher = new int[26];									//cipher -> Nouveau tableau de Int de taille 26
 		for (int i = 0; i< 26; i++){
@@ -24,7 +24,7 @@ public class Rotor {
 		}
 		
 		s = notches.trim().replace(" and ", "").toCharArray();
-		if (s.length == 2){											// A test
+		if (s.length == 2){	
 			return new Rotor(cipher, toIndex(s[0]), toIndex(s[1]));
 		} else {
 			return new Rotor(cipher, toIndex(s[0]));
@@ -45,31 +45,31 @@ public class Rotor {
 		createBCipher();
 	}
 
-    public int convertForward(int p) {
+    public int convertForward(int p) {								//Doit être testé
         return ((cipher[((p+position)%26+26)%26]-position)%26+26)%26;
     }
 
-    public int convertBackward(int e) {
+    public int convertBackward(int e) {								//Doit être testé
         return ((bcipher[((e+position)%26+26)%26]-position)%26+26)%26;
     }
     
-    public void advance() {
+    public void advance() {											//Doit être testé
         position = (position+1) % 26;
     }
     
-    protected boolean atNotch() {
+    protected boolean atNotch() {									//Pas besion de test
         return (position == notch1 || position == notch2);
     }
 
-    protected static char toLetter(int p) {
+    protected static char toLetter(int p) {							//Pas besion de test
         return (char)(p + 'A');
     }
 
-    protected static int toIndex(char c) {
+    protected static int toIndex(char c) {							//Pas besion de test
         return c - 'A';
     }
     
-	private void createBCipher() {
+	private void createBCipher() {									//Doit être testé
 		for(int i =0; i<26; i++)
 			bcipher[cipher[i]] = i;
 	}

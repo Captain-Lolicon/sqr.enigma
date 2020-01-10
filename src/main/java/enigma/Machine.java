@@ -11,14 +11,16 @@ public class Machine {
 
 	//Initialisation des positions de ceux-ci
 	
-	public void initRotors(Reflector reflector, Rotor left, Rotor middle, Rotor right) {
+	public void initRotors(Reflector reflector, Rotor left, Rotor middle, Rotor right) {		//Non tester car initialisation
 		this.reflector = reflector;
 		leftRotor = left;
 		middleRotor = middle;
 		rightRotor = right;
 	}
-
-	public void setPositions(String setting) {
+	
+	// Permet de paramétrer les positions des différents rotors et reflecteur
+	
+	public void setPositions(String setting) {					//Non tester par inspection car Setter
 		char[] charSettings = setting.toCharArray();
 		reflector.setPosition(Rotor.toIndex(charSettings[0]));
 		leftRotor.setPosition(Rotor.toIndex(charSettings[1]));
@@ -26,13 +28,17 @@ public class Machine {
 		rightRotor.setPosition(Rotor.toIndex(charSettings[3]));
 	}
 	
+	// Configure le rotor après l'avoir initialisé
+	
 	public void configure(Reflector reflector, Rotor left, Rotor middle, Rotor right, String setting) {
 		this.initRotors(reflector, left, middle, right);
 		this.setPositions(setting);
 
 	}
-
-	public String convert(String msg) {
+	
+	//Converti une chaine de caractère en un tableau de char
+	
+	public String convert(String msg) {			//Doit être testé
 		msg = msg.toUpperCase();
 		char[] msgChars = msg.toCharArray();
 		String result = "";
@@ -42,7 +48,9 @@ public class Machine {
 		return result;
 	}
 
-	char convertChar(char c) {
+	//Permet de convertir un caractère en fonction de ce que la méthode advance rotor nous fourni
+	
+	char convertChar(char c) {					//Doit être testé
 		advanceRotors();
 		int charIndex = Rotor.toIndex(c);
 		int output;
@@ -57,7 +65,9 @@ public class Machine {
 
 	}
 
-	void advanceRotors() {
+	//Permet de valider ou non la rotation d'un rotor
+	
+	void advanceRotors() {						//Doit être testé
 		boolean advanceLeft = false;
 		boolean advanceMiddle = false;
 		boolean advanceRight = true;

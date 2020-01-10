@@ -7,7 +7,11 @@ public class Reflector extends Rotor {
 	
 	int[] reflection;
 	
-	public static Reflector reflectorFactory(String str){
+	/** Permet de retourner un reflector contenant un tableau de char. La fontion permet de convertir une chaine de 
+	* charactère en un tableau de charactère sans espace.
+	*/
+	
+	public static Reflector reflectorFactory(String str){			//Doit être testé
 		char[] s = str.trim().replace(" ", "").toCharArray();
 		int[] cipher = new int[26];
 		for (int i = 0; i< 26; i++){
@@ -20,13 +24,13 @@ public class Reflector extends Rotor {
 		super(r,0);
 		reflection = r;
 	}
-        
-    public int convertForward(int p) {
+	
+    public int convertForward(int p) {								//Doit être testé
         return ((reflection[((p)%26+26)%26])%26+26)%26;
     }
 
     @Override
-    public int convertBackward(int unused) {
+    public int convertBackward(int unused) {						// ???
         throw new UnsupportedOperationException();
     }
 
