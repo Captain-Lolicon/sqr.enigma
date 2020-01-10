@@ -8,22 +8,23 @@ public class Rotor {
     private int notch1 = -1;
     private int notch2 = -1;
 
-    public int getPosition() {
+    public int getPosition() {		//Non tester par inspection car Get
         return position;
     }
 
-    public void setPosition(int posn) {
+    public void setPosition(int posn) {		//Non tester par inspection car Set
         position = posn;
     }
     
 	public static Rotor rotorFactory(String str, String notches){
-		char[] s = str.trim().replace(" ", "").toCharArray();
-		int[] cipher = new int[26];
+		char[] s = str.trim().replace(" ", "").toCharArray();		//retire tout les espaces de la chaine de caractère et la mets dans un tableau
+		int[] cipher = new int[26];									//cipher -> Nouveau tableau de Int de taille 26
 		for (int i = 0; i< 26; i++){
-			cipher[i] = toIndex(s[i]);
+			cipher[i] = toIndex(s[i]);								//Rempli cipher avec le char de s[i] - A
 		}
+		
 		s = notches.trim().replace(" and ", "").toCharArray();
-		if (s.length == 2){
+		if (s.length == 2){											// A test
 			return new Rotor(cipher, toIndex(s[0]), toIndex(s[1]));
 		} else {
 			return new Rotor(cipher, toIndex(s[0]));

@@ -1,12 +1,16 @@
 package enigma;
 
 public class Machine {
-
+	
+	//Création des 3 rotors et reflecteur
+	
 	private Rotor leftRotor;
 	private Rotor middleRotor;
 	private Rotor rightRotor;
 	private Reflector reflector;
 
+	//Initialisation des positions de ceux-ci
+	
 	public void initRotors(Reflector reflector, Rotor left, Rotor middle, Rotor right) {
 		this.reflector = reflector;
 		leftRotor = left;
