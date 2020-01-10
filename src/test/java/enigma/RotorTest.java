@@ -8,7 +8,18 @@ public class RotorTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		rotor
 	}
+	
+	@Test
+	public void testAdvance() {
+		
+	}
+	
+	@Test
+	public void testConvBack() {
+		
+	}
+	
 
 }

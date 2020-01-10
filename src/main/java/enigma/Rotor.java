@@ -57,15 +57,15 @@ public class Rotor {
         position = (position+1) % 26;
     }
     
-    protected boolean atNotch() {									//Pas besion de test
+    protected boolean atNotch() {									//Pas besoin de test
         return (position == notch1 || position == notch2);
     }
 
-    protected static char toLetter(int p) {							//Pas besion de test
+    protected static char toLetter(int p) {							//Pas besoin de test
         return (char)(p + 'A');
     }
 
-    protected static int toIndex(char c) {							//Pas besion de test
+    protected static int toIndex(char c) {							//Pas besoin de test
         return c - 'A';
     }
     

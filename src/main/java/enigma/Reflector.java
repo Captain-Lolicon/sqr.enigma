@@ -7,8 +7,8 @@ public class Reflector extends Rotor {
 	
 	int[] reflection;
 	
-	/** Permet de retourner un reflector contenant un tableau de char. La fontion permet de convertir une chaine de 
-	* charactère en un tableau de charactère sans espace.
+	/** Permet de retourner un reflector contenant un tableau de int. La fontion permet de convertir une chaine de 
+	* charactère en un tableau de charactère sans espace et de
 	*/
 	
 	public static Reflector reflectorFactory(String str){			//Doit être testé
